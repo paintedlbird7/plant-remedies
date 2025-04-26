@@ -1,0 +1,48 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" type="image/png" href="" />
+    <link rel="stylesheet" href="{% static 'css/base.css' %}" />
+    <img src=
+    "{% static 'images/holding.png' %}" 
+    alt="The Plant Collector Logo" width=275/>
+
+    <link rel="shortcut icon" type="image/png" href="{% static 'images/plant.png' %}" />
+
+
+    <title>Plant Collector</title>
+    {% block head %} 
+    {% endblock %}
+  </head>
+  <body>
+    <header>
+      <div class="">
+         {% comment %} <a href="/"> {% endcomment %}
+          <nav>
+
+          <a href="/">Home</a>
+        </nav>
+
+          {% comment %} <img src="{% static 'images/seedling.png' %}" 
+          alt="The Plant Collector Logo" width="25" /> {% endcomment %}
+        </a>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="/plants">All Plants</a></li>
+          <li><a href="/about">About</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+     {% block content %} 
+     {% endblock %}
+     </main>
+  </body>
+</html>
+
