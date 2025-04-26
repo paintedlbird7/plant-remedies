@@ -1,0 +1,32 @@
+{% extends 'base.html' %} 
+{% load static %} 
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/plants/plant-detail.css' %}" />
+{% endblock %} 
+{% block content %}
+<section class="plant-container">
+</div> 
+<div class="card-img-container">
+    <img
+      src="{% static 'images/'|add:plant.image %}"
+      alt="{{ plant.name }} image"
+      width="75"
+    />
+    
+  </div>      
+<h2 class="plant-details">{{ plant.name }}</h2>
+<p><strong>Remedy for:</strong> {{ plant.ailment }}</p>
+<p><small>{{ plant.description }}</small></p>
+<p><em>Origin: {{ plant.origin }}</em></p>
+</div>
+  {% comment %} <div class="plant-details">
+    <h1>{{ plant.name }}</h1>
+    {% if plant.age > 0 %}
+      <h2>A {{ plant.age }} year old {{ plant.breed }}</h2>
+    {% else %}
+      <h2>A {{ plant.breed }} kitten.</h2>
+    {% endif %}
+    <p>{{ plant.description }}</p>
+  </div> {% endcomment %}
+</section>
+{% endblock %}
