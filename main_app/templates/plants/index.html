@@ -28,28 +28,7 @@
 <section class="card-container">
   {% for plant in plants %}
   <div class="card">
-    <div class="card-content">
-      <div class="card-img-container">
-        <img
-          src="{% static 'images/'|add:plant.image %}"
-          alt="{{ plant.name }} image"
-          width="75"
-        />
-        {% comment %} <img src="/static/images/aloevera.png" alt="Aloe Vera image" width="75" /> {% endcomment %}
-
-      </div>
-      <h2 class="card-title">{{ plant.name }}</h2>
-      <p><strong>Remedy for:</strong> {{ plant.ailment }}</p>
-      <p><small>{{ plant.description }}</small></p>
-      <p><em>Origin: {{ plant.origin }}</em></p>
-    </div>
-  </div>
-  {% endfor %}
-</section>
-
-{% comment %} <section class="card-container">
-  {% for plant in plants %}
-  <div class="card">
+    <a href="/plants/{{ plant.id }}">
     <div class="card-content">
       <div class="card-img-container">
         <img
@@ -64,8 +43,9 @@
 <p><small>{{ plant.description }}</small></p>
 <p><em>Origin: {{ plant.origin }}</em></p>
     </div>
+  </a>
   </div>
   {% endfor %}
-</section> {% endcomment %}
+</section>
 
 {% endblock %}
