@@ -6,7 +6,12 @@
 {% block content %}
 
 <div class="page-header">
-  <h1>Add a Plant</h1>
+  <!-- Check if a plant object exists to determine if we're editing -->
+  {% if plant %}
+    <h1>Edit {{ plant.name }}</h1>
+  {% else %}
+    <h1>Add a Plant</h1>
+  {% endif %}
   {% comment %} <img src="{% static 'images/nerd-plant.svg' %}" alt="A plant using a computer" /> {% endcomment %}
 </div>
 
