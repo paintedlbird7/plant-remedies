@@ -1,7 +1,8 @@
 # main_app/views.py
 from django.shortcuts import render
 from .models import Plant
-
+from django.views.generic.edit import CreateView
+from .models import Plant
 # Import HttpResponse to send text-based responses
 from django.http import HttpResponse
 
@@ -22,5 +23,13 @@ def plant_detail(request, plant_id):
     plant = Plant.objects.get(id=plant_id)
     return render(request, 'plants/detail.html', {'plant': plant})
 
+class PlantCreate(CreateView):
+    model = Plant
+    # fields = '__all__'
+    fields = ['name', 'ailment', 'description', 'origin', 'image']
+
+
+
 
 # my db I created is called 'plantcollector2'
+# TODO: left at Adjust the nav

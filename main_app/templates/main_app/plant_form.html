@@ -1,0 +1,21 @@
+{% extends 'base.html' %} 
+{% load static %} 
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/form.css' %}" />
+{% endblock %} 
+{% block content %}
+
+<div class="page-header">
+  <h1>Add a Plant</h1>
+  {% comment %} <img src="{% static 'images/nerd-plant.svg' %}" alt="A plant using a computer" /> {% endcomment %}
+</div>
+
+<form action="" method="post" class="form-container">
+  {% csrf_token %}
+  <table>
+    {{ form.as_table }}
+  </table>
+  <button type="submit" class="btn submit">Submit!</button>
+</form>
+
+{% endblock %}

@@ -34,8 +34,10 @@
       </div>
       <nav>
         <ul>
-          <li><a href="/plants">All Plants</a></li>
-          <li><a href="/about">About</a></li>
+          <li><a href="{% url 'plant-index' %}">All Plants</a></li>
+          <li><a href="{% url 'plant-create' %}">Add a Plant</a></li>
+          <li><a href="{% url 'about' %}">About</a></li>
+          
         </ul>
       </nav>
     </header>
