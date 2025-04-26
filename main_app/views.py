@@ -45,3 +45,4 @@ class PlantDelete(DeleteView):
 
 # my db I created is called 'plantcollector2'
 #TODO: left at Creating a confirmation template for deleting a cat
+# TODO: add image pertaining to the plant in the EDIT page
