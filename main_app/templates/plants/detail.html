@@ -19,14 +19,11 @@
 <p><small>{{ plant.description }}</small></p>
 <p><em>Origin: {{ plant.origin }}</em></p>
 </div>
-  {% comment %} <div class="plant-details">
-    <h1>{{ plant.name }}</h1>
-    {% if plant.age > 0 %}
-      <h2>A {{ plant.age }} year old {{ plant.breed }}</h2>
-    {% else %}
-      <h2>A {{ plant.breed }} kitten.</h2>
-    {% endif %}
-    <p>{{ plant.description }}</p>
-  </div> {% endcomment %}
+
+<div class="plant-actions">
+    <a href="{% url 'plant-update' plant.id %}" class="btn warn">Edit</a>
+    <a href="{% url 'plant-delete' plant.id %}" class="btn danger">Delete</a>
+  </div>
+
 </section>
 {% endblock %}

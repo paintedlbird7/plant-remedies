@@ -9,5 +9,7 @@ urlpatterns = [
     path('plants/<int:plant_id>/', views.plant_detail, name='plant-detail'),
     # new route used to create a plant
     path('plants/create/', views.PlantCreate.as_view(), name='plant-create'),
+    path('plants/<int:pk>/update/', views.PlantUpdate.as_view(), name='plant-update'),
+    path('plants/<int:pk>/delete/', views.PlantDelete.as_view(), name='plant-delete'),
 
 ]

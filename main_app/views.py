@@ -5,6 +5,8 @@ from django.views.generic.edit import CreateView
 from .models import Plant
 # Import HttpResponse to send text-based responses
 from django.http import HttpResponse
+# Add UdpateView & DeleteView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 
 
 # Define the home view function
@@ -29,6 +31,14 @@ class PlantCreate(CreateView):
     fields = ['name', 'ailment', 'description', 'origin', 'image']
     # success_url = '/plants/'
 
+class PlantUpdate(UpdateView):
+    model = Plant
+    # Let's disallow the renaming of a plant by excluding the name field!
+    fields = ['name', 'ailment', 'description', 'origin', 'image']
+
+class PlantDelete(DeleteView):
+    model = Plant
+    success_url = '/plants/'
 
 
 
