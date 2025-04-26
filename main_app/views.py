@@ -27,6 +27,8 @@ class PlantCreate(CreateView):
     model = Plant
     # fields = '__all__'
     fields = ['name', 'ailment', 'description', 'origin', 'image']
+    # success_url = '/plants/'
+
 
 
 
