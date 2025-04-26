@@ -6,6 +6,9 @@
 {% block content %}
 <section class="plant-container">
 </div> 
+{% comment %} <div class="cat-img">
+  <img src="{% static 'images/sk8r-boi-cat.svg' %}" alt="A skater boy cat" />
+</div> {% endcomment %}
 <div class="card-img-container">
     <img
       src="{% static 'images/'|add:plant.image %}"
@@ -14,10 +17,10 @@
     />
     
   </div>      
-<h2 class="plant-details">{{ plant.name }}</h2>
-<p><strong>Remedy for:</strong> {{ plant.ailment }}</p>
-<p><small>{{ plant.description }}</small></p>
-<p><em>Origin: {{ plant.origin }}</em></p>
+<h2 class="plant-details"><h2>{{ plant.name }}</h2>
+<h1><p><strong>Remedy for:</strong> {{ plant.ailment }}</p></h1>
+<h1><p><small>{{ plant.description }}</small></p></h1>
+<h1><p><em>Origin: {{ plant.origin }}</em></p><h1>
 </div>
 
 <div class="plant-actions">
