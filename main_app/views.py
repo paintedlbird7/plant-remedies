@@ -9,11 +9,24 @@ from django.http import HttpResponse
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .forms import FeedingForm
 from django.shortcuts import render, redirect
-
+from django.contrib.auth.views import LoginView
+from django.contrib.auth.forms import AuthenticationForm
 
 # Define the home view function
+class Home(LoginView):
+    template_name = 'home.html'
+
 def home(request):
-    return render(request, 'home.html')
+    form = AuthenticationForm()
+    return render(request, 'home.html', {'form': form})
+
+def about(request):
+    # return HttpResponse('<h1>About the DogCollector</h1>')
+    return render(request, 'about.html')
+
+def login_view(request):
+    form = AuthenticationForm()
+    return render(request, 'registration/login.html', {'form': form})
     
 def about(request):
     # return HttpResponse('<h1>About the PlantCollector</h1>')
@@ -62,5 +75,5 @@ def add_feeding(request, plant_id):
 
 
 # my db I created is called 'plantcollector2'
-#TODO: left at Adjust the order of feedings
+#TODO: left at 
 # TODO: add image pertaining to the plant in the EDIT page

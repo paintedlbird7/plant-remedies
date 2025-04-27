@@ -8,15 +8,26 @@
 {% block content %}
 <section class="logo-container">
   <div class="plant-container">
-    {% comment %} <img
-      src="{% static 'images/splash.svg' %}"
+    <img
+      src="{% static 'images/plant.png' %}"
       alt="The Plant Collector Plant"
-    /> {% endcomment %}
+    />
   </div>
-  {% comment %} <img
+  <img
     src="{% static 'images/logotype.svg' %}"
     alt="Text reads: Plant Collector"
-  /> {% endcomment %}
+  />
 </section>
+
+<section>
+  <form action="{% url 'home' %}" method="post" class="login">
+    <h1>Login</h1>
+    {% csrf_token %} {{ form.as_p }}
+    <input type="hidden" name="next" value="{{ next }}" />
+    <button type="submit" class="btn submit">Login</button>
+  </form>
+</section>
+
 {% endblock %}
 
+{% comment %} {% endblock %} {% endcomment %}

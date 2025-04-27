@@ -16,5 +16,6 @@ urlpatterns = [
         views.add_feeding, 
         name='add-feeding'
     ),
+    path('', views.Home.as_view(), name='home'),
 
 ]

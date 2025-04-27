@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse
+from django.contrib.auth.models import User
 
 # A tuple of 2-tuples added above our models
 MEALS = (
@@ -8,7 +9,6 @@ MEALS = (
     ('F', 'Fertilizer'),
     ('P', 'Pruning'),
     ('H', 'Harvest'),
-
 )
 
 
@@ -19,6 +19,8 @@ class Plant(models.Model):
     description = models.TextField(max_length=250)
     origin = models.CharField(max_length=100)
     image = models.CharField(max_length=100)
+     # Add the foreign key linking to a user instance
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name
