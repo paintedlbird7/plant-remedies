@@ -6,8 +6,8 @@
 {% block content %}
 <section class="plant-container">
 </div> 
-{% comment %} <div class="cat-img">
-  <img src="{% static 'images/sk8r-boi-cat.svg' %}" alt="A skater boy cat" />
+{% comment %} <div class="plant-img">
+  <img src="{% static 'images/sk8r-boi-plant.svg' %}" alt="A skater boy plant" />
 </div> {% endcomment %}
 <div class="card-img-container">
     <img
@@ -27,6 +27,43 @@
     <a href="{% url 'plant-update' plant.id %}" class="btn warn">Edit</a>
     <a href="{% url 'plant-delete' plant.id %}" class="btn danger">Delete</a>
   </div>
-
 </section>
+
+
+
+<!-- Existing plant-container above -->
+<div class="feedings-toy-container">
+  <section class="feedings">
+    <div class="subsection-title">
+      <h2>Feedings</h2>
+      {% comment %} <img
+        src="{% static 'images/plant-cone.svg' %}"
+        alt="An ice cream cone plant"
+      /> {% endcomment %}
+      {% comment %} <img src="{% static 'images/plant-onigiri.svg' %}" alt="A plant as onigiri" /> {% endcomment %}
+      {% comment %} <img
+        src="{% static 'images/kitty-kabob.svg' %}"
+        alt="baby plants"
+      /> {% endcomment %}
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Meal</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for feeding in plant.feeding_set.all %}
+          <tr>
+            <td>{{feeding.date}}</td>
+            <td>{{feeding.get_meal_display}}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </section>
+</div>
+
 {% endblock %}
+{% comment %} {% endblock %} {% endcomment %}
