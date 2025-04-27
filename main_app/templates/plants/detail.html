@@ -64,7 +64,33 @@
       <button type="submit" class="btn submit">Add Feeding</button>
     </form> {% endcomment %}
 
-    <table>
+
+    <h3>Past Feedings</h3>
+    {% if plant.feeding_set.all.count %}
+      <table>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Meal</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for feeding in plant.feeding_set.all %}
+          <tr>
+            <td>{{feeding.date}}</td>
+            <td>{{feeding.get_meal_display}}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    {% else %}
+      <div class="subsection-content">
+        <p>⚠️ {{plant.name}} has not been fed!</p>
+      </div>
+    {% endif %}
+    
+
+    {% comment %} <table>
       <thead>
         <tr>
           <th>Date</th>
@@ -79,7 +105,9 @@
           </tr>
         {% endfor %}
       </tbody>
-    </table>
+    </table> {% endcomment %}
+
+
   </section>
 </div>
 

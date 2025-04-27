@@ -62,5 +62,5 @@ def add_feeding(request, plant_id):
 
 
 # my db I created is called 'plantcollector2'
-#TODO: left at Displaying a Plant’s Feedings
+#TODO: left at Adjust the order of feedings
 # TODO: add image pertaining to the plant in the EDIT page
