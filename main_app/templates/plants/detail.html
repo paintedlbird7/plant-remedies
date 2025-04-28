@@ -1,76 +1,58 @@
-{% extends 'base.html' %} 
-{% load static %} 
+{% extends 'base.html' %}
+{% load static %}
+
 {% block head %}
 <link rel="stylesheet" href="{% static 'css/plants/plant-detail.css' %}" />
-{% endblock %} 
+{% endblock %}
+
 {% block content %}
 <section class="plant-container">
-</div> 
-{% comment %} <div class="plant-img">
-  <img src="{% static 'images/sk8r-boi-plant.svg' %}" alt="A skater boy plant" />
-</div> {% endcomment %}
-<div class="card-img-container">
+  <!-- Plant Image -->
+  <div class="card-img-container">
     <img
       src="{% static 'images/'|add:plant.image %}"
       alt="{{ plant.name }} image"
       width="75"
     />
-    
-  </div>      
-<h2 class="plant-details"><h2>{{ plant.name }}</h2>
-<h1><p><strong>Remedy for:</strong> {{ plant.ailment }}</p></h1>
-<h1><p><small>{{ plant.description }}</small></p></h1>
-<h1><p><em>Origin: {{ plant.origin }}</em></p><h1>
-</div>
+  </div>
 
-<div class="plant-actions">
+  <!-- Plant Details -->
+  <h2 class="plant-details">{{ plant.name }}</h2>
+  <h1><p><strong>Remedy for:</strong> {{ plant.ailment }}</p></h1>
+  <h1><p><small>{{ plant.description }}</small></p></h1>
+  <h1><p><em>Origin: {{ plant.origin }}</em></p></h1>
+
+  <div class="plant-actions">
     <a href="{% url 'plant-update' plant.id %}" class="btn warn">Edit</a>
     <a href="{% url 'plant-delete' plant.id %}" class="btn danger">Delete</a>
   </div>
 </section>
 
-
-
-<!-- Existing plant-container above -->
+<!-- Feedings Section -->
 <div class="feedings-toy-container">
   <section class="feedings">
     <div class="subsection-title">
       <h2>Feedings</h2>
-      {% comment %} <img
-        src="{% static 'images/plant-cone.svg' %}"
-        alt="An ice cream cone plant"
-      /> {% endcomment %}
-      {% comment %} <img src="{% static 'images/plant-onigiri.svg' %}" alt="A plant as onigiri" /> {% endcomment %}
-      {% comment %} <img
-        src="{% static 'images/kitty-kabob.svg' %}"
-        alt="baby plants"
-      /> {% endcomment %}
     </div>
 
     <h3>Add a Feeding</h3>
-<form
-  action="{% url 'add-feeding' plant.id %}"
-  method="post"
-  class="subsection-content"
-  autocomplete="off"
->
-{% if cat.fed_for_today %}
-  <p class="fed">{{plant.name}} has been fed all their elements for today!</p>
-  {% else %}
-  <p class="unfed">{{plant.name}} might need sun or water!</p>
-  {% endif %} 
-  {% csrf_token %}
-  {{ feeding_form.as_p }}
-  <button type="submit" class="btn submit">Add Elements</button>
-</form>
-</form>
-    {% comment %} <form method="post" class="subsection-content" autocomplete="off">
-      {% csrf_token %} 
+    <form
+      action="{% url 'add-feeding' plant.id %}"
+      method="post"
+      class="subsection-content"
+      autocomplete="off"
+    >
+      {% if plant.fed_for_today %}
+        <p class="fed">{{ plant.name }} has been fed all their elements for today!</p>
+      {% else %}
+        <p class="unfed">{{ plant.name }} might need sun or water!</p>
+      {% endif %}
+      {% csrf_token %}
       {{ feeding_form.as_p }}
-      <button type="submit" class="btn submit">Add Feeding</button>
-    </form> {% endcomment %}
+      <button type="submit" class="btn submit">Add Elements</button>
+    </form>
 
-
+    <!-- Past Feedings -->
     <h3>Past Feedings</h3>
     {% if plant.feeding_set.all.count %}
       <table>
@@ -82,40 +64,46 @@
         </thead>
         <tbody>
           {% for feeding in plant.feeding_set.all %}
-          <tr>
-            <td>{{feeding.date}}</td>
-            <td>{{feeding.get_meal_display}}</td>
-          </tr>
+            <tr>
+              <td>{{ feeding.date }}</td>
+              <td>{{ feeding.get_meal_display }}</td>
+            </tr>
           {% endfor %}
         </tbody>
       </table>
     {% else %}
       <div class="subsection-content">
-        <p>⚠️ {{plant.name}} has not been fed!</p>
+        <p>⚠️ {{ plant.name }} has not been fed!</p>
       </div>
     {% endif %}
-    
+  </section>
+</div>
 
-    {% comment %} <table>
-      <thead>
-        <tr>
-          <th>Date</th>
-          <th>Meal</th>
-        </tr>
-      </thead>
-      <tbody>
-        {% for feeding in plant.feeding_set.all %}
-          <tr>
-            <td>{{feeding.date}}</td>
-            <td>{{feeding.get_meal_display}}</td>
-          </tr>
+<!-- Recipes Section -->
+<div class="recipes-container">
+  <section class="recipes">
+    <div class="subsection-title">
+      <h2>Recipes for {{ plant.name }}</h2>
+    </div>
+
+    <!-- List of Recipes -->
+    {% if recipes %}
+      <ul>
+        {% for recipe in recipes %}
+          <li>
+            <strong>{{ recipe.title }}</strong><br>
+            <p>{{ recipe.description }}</p>
+            <em>{{ recipe.instructions }}</em>
+          </li>
         {% endfor %}
-      </tbody>
-    </table> {% endcomment %}
+      </ul>
+    {% else %}
+      <p>No recipes available for this plant yet.</p>
+    {% endif %}
 
-
+    <!-- Add Recipe Button -->
+    <a href="{% url 'add-recipe' plant.id %}" class="btn add-recipe">Add a New Recipe</a>
   </section>
 </div>
 
 {% endblock %}
-{% comment %} {% endblock %} {% endcomment %}

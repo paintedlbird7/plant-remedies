@@ -7,7 +7,7 @@ from .models import Plant
 from django.http import HttpResponse
 # Add UdpateView & DeleteView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from .forms import FeedingForm
+from .forms import FeedingForm, RecipeForm
 from django.shortcuts import render, redirect
 from django.contrib.auth.views import LoginView
 from django.contrib.auth.forms import AuthenticationForm
@@ -18,6 +18,8 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 # Import the mixin for class-based views
 from django.contrib.auth.mixins import LoginRequiredMixin
+
+from .forms import RecipeForm
 
 # Define the home view function
 class Home(LoginView):
@@ -50,10 +52,11 @@ def plant_index(request):
 def plant_detail(request, plant_id):
     plant = Plant.objects.get(id=plant_id)
     # instantiate FeedingForm to be rendered in the template
+    recipes = plant.recipes.all()
     feeding_form = FeedingForm()
     return render(request, 'plants/detail.html', {
         # include the plant and feeding_form in the context
-            'plant': plant, 'feeding_form': feeding_form
+            'plant': plant, 'recipes': recipes, 'feeding_form': feeding_form
         })
 
 LoginRequiredMixin,
@@ -117,8 +120,31 @@ def signup(request):
     #     {'form': form, 'error_message': error_message}
     # )
 
+def add_recipe(request, plant_id):
+    # Look up the plant we're adding a recipe to
+    plant = Plant.objects.get(id=plant_id)
+    
+    # Check if the form was submitted
+    if request.method == 'POST':
+        form = RecipeForm(request.POST)
+        if form.is_valid():
+            # Don't save to the database yet
+            new_recipe = form.save(commit=False)
+            # Attach the plant to this recipe
+            new_recipe.plant = plant
+            # Now save to the database
+            new_recipe.save()
+            return redirect('plant-detail', plant_id=plant.id)
+    else:
+        # if GET request, just show an empty form
+        form = RecipeForm()
+    
+    return render(request, 'recipes/recipe_form.html', {
+        'form': form,
+        'plant': plant
+    })
 
 
-# my db I created is called 'plantcollector2'
-#TODO: left at Update the PlantCreate view to assign a new plant to the logged in user
+
 # TODO: add image pertaining to the plant in the EDIT page
+# TODO: make repice render after form submit

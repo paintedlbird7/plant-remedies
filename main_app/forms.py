@@ -1,5 +1,7 @@
+# forms.py
 from django import forms
 from .models import Feeding
+from .models import Recipe
 
 class FeedingForm(forms.ModelForm):
     class Meta:
@@ -15,3 +17,7 @@ class FeedingForm(forms.ModelForm):
             ),
         }
 
+class RecipeForm(forms.ModelForm):
+    class Meta:
+        model = Recipe
+        fields = ['title', 'ingredients', 'instructions']
