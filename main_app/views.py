@@ -44,7 +44,7 @@ def plant_index(request):
     plants = Plant.objects.filter(user=request.user)
     # You could also retrieve the logged in user's plants like this
     # plants = request.user.plants_set.all()
-    return render(request, 'cats/index.html', { 'plants': plants })
+    return render(request, 'plants/index.html', { 'plants': plants })
 
 @login_required
 def plant_detail(request, plant_id):

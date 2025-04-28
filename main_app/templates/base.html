@@ -37,10 +37,8 @@
       <nav>
         <ul>
           {% if user.is_authenticated %}
-          <li><a href="{% url 'cat-index' %}">All Cats</a></li>
-          <li><a href="{% url 'toy-index' %}">All Toys</a></li>
-          <li><a href="{% url 'cat-create' %}">Add a Cat</a></li>
-          <li><a href="{% url 'toy-create' %}">Add a Toy</a></li>
+          <li><a href="{% url 'plant-index' %}">All Plants</a></li>
+          <li><a href="{% url 'plant-create' %}">Add a Plant</a></li>
           <li><a href="{% url 'about' %}">About</a></li>
           <li>
             <form id="logout-form" method="post" action="{% url 'logout' %}">
