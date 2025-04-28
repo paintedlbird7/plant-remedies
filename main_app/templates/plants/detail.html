@@ -54,9 +54,15 @@
   class="subsection-content"
   autocomplete="off"
 >
-  {% csrf_token %} 
+{% if cat.fed_for_today %}
+  <p class="fed">{{plant.name}} has been fed all their elements for today!</p>
+  {% else %}
+  <p class="unfed">{{plant.name}} might need sun or water!</p>
+  {% endif %} 
+  {% csrf_token %}
   {{ feeding_form.as_p }}
-  <button type="submit" class="btn submit">Add Feeding</button>
+  <button type="submit" class="btn submit">Add Elements</button>
+</form>
 </form>
     {% comment %} <form method="post" class="subsection-content" autocomplete="off">
       {% csrf_token %} 

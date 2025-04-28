@@ -1,3 +1,4 @@
+from datetime import date
 from django.db import models
 from django.urls import reverse
 from django.contrib.auth.models import User
@@ -30,6 +31,9 @@ class Plant(models.Model):
         # Use the 'reverse' function to dynamically find the URL for viewing this plant's details
         return reverse('plant-detail', kwargs={'plant_id': self.id})
     
+    def fed_for_today(self):
+        return self.feeding_set.filter(date=date.today()).count() >= len(MEALS)
+    
 # new Feeding model below Plant model
 class Feeding(models.Model):
 # The first optional positional argument overrides the label
@@ -41,7 +45,7 @@ class Feeding(models.Model):
         # set the default value for meal to be 'B'
         default=MEALS[0][0]
     )
-       # Create a cat_id column for each feeding in the database
+       # Create a plant_id column for each feeding in the database
     plant = models.ForeignKey(Plant, on_delete=models.CASCADE)
 
 

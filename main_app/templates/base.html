@@ -23,7 +23,9 @@
     <header>
       <div class="">
          {% comment %} <a href="/"> {% endcomment %}
-          <nav>
+         
+         
+         <nav>
 
           <a href="/">Home</a>
         </nav>
@@ -34,12 +36,26 @@
       </div>
       <nav>
         <ul>
-          <li><a href="{% url 'plant-index' %}">All Plants</a></li>
-          <li><a href="{% url 'plant-create' %}">Add a Plant</a></li>
+          {% if user.is_authenticated %}
+          <li><a href="{% url 'cat-index' %}">All Cats</a></li>
+          <li><a href="{% url 'toy-index' %}">All Toys</a></li>
+          <li><a href="{% url 'cat-create' %}">Add a Cat</a></li>
+          <li><a href="{% url 'toy-create' %}">Add a Toy</a></li>
           <li><a href="{% url 'about' %}">About</a></li>
-          
+          <li>
+            <form id="logout-form" method="post" action="{% url 'logout' %}">
+              {% csrf_token %}
+              <button type="submit">Log out</button>
+            </form>
+          </li>
+        {% else %}
+          <li><a href="{% url 'about' %}">About</a></li>
+          <li><a href="{% url 'home' %}">Login</a></li> 
+          <li><a href="{% url 'signup' %}">Sign Up</a></li>       
+          {% endif %}
         </ul>
       </nav>
+      
     </header>
     <main>
      {% block content %} 
