@@ -11,8 +11,7 @@
 
 /* Recipe Card */
 .recipe-card {
-  /* border: 2px solid blue; */
-  border-radius: 10px;
+  /* border-radius: 10px; */
   padding: 20px;
   margin: 20px auto;
   box-shadow: 0 4px 8px rgba(0, 0, 255, 0.2);
@@ -55,40 +54,45 @@
 }
 
 .feedings-table {
+  color: black;
   /* border: 2px solid green; */
   font-size: 1.2rem;
 }
 
-/* TODO: can't see this style */
 .no-feedings-warning {
-  border: 12px solid green;
+  /* border: 2px solid green; */
   color: red;
-  font-size: 12.2rem;
+  font-size: 15.2rem;
 }
 
 /* Recipes Section */
+/* TODO: can't see this style, create code to render GET list of recipes */
 .recipes-list {
   /* border: 2px solid blue; */
   font-size: 1.3rem;
 }
 
+/* TODO: can't see this style, create code to render GET list of recipes */
 .recipe-item {
   /* border: 2px solid green; */
   font-size: 1.2rem; 
 }
 
+/* TODO: can't see this style*/
 .recipe-title {
   /* border: 2px solid blue; */
   font-size: 1.6rem;
   color: #0047ab;
 }
 
+/* TODO: can't see this style, create code to render GET list of recipes */
 .recipe-description {
   /* border: 2px solid blue; */
   color: #666;
   font-size: 1.3rem;
 }
 
+/* TODO: can't see this style, create code to render GET list of recipes */
 .recipe-instructions {
   /* border: 2px solid red; */
   font-size: 1.3rem;
