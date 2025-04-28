@@ -19,5 +19,5 @@ urlpatterns = [
     path('', views.Home.as_view(), name='home'),
     path('accounts/signup/', views.signup, name='signup'),
     path('plants/<int:plant_id>/add-recipe/', views.add_recipe, name='add-recipe'),
-
+    path('plant/<int:plant_id>/', views.plant_detail, name='plant-detail'),
 ]

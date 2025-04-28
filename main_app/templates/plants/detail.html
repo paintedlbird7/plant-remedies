@@ -7,6 +7,7 @@
 
 {% block content %}
 <section class="plant-container">
+
   <!-- Plant Image -->
   <div class="card-img-container">
     <img
@@ -100,6 +101,14 @@
     {% else %}
       <p>No recipes available for this plant yet.</p>
     {% endif %}
+
+    <!-- Add Recipe Form -->
+    <h3>Add a New Recipe</h3>
+    <form method="post" action="{% url 'add-recipe' plant.id %}">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit" class="btn submit">Save Recipe</button>
+    </form>
 
     <!-- Add Recipe Button -->
     <a href="{% url 'add-recipe' plant.id %}" class="btn add-recipe">Add a New Recipe</a>
