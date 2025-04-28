@@ -9,6 +9,20 @@
   max-width: 800px;
 }
 
+/* Recipe Card */
+.recipe-card {
+  /* border: 2px solid blue; */
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 255, 0.2); /* subtle blue shadow */
+  background-color: #f9fbff; /* light blue background */
+  width: 90%;
+  max-width: 800px;
+  color: #333; /* default text color */
+}
+
+/* Plant Info */
 .plant-name {
   /* border: 2px solid green; */
   font-size: 6.6rem; /* Increase font size */
@@ -28,7 +42,8 @@
   /* border: 2px solid green; */
   font-size: 1.3rem; /* Increase font size */
 }
-/* feedings */
+
+/* Feedings Section */
 .add-feeding-title {
   /* border: 2px solid green; */
   font-size: 1.5rem; /* Increase font size */
@@ -44,13 +59,16 @@
   font-size: 1.2rem; /* Increase font size */
 }
 
+/* TODO: can't see this style */
 .no-feedings-warning {
-  /* border: 2px solid green; */
-  font-size: 11.2rem; /* Increase font size */
+  border: 12px solid green;
+  color: red;
+  font-size: 12.2rem;
 }
 
+/* Recipes Section */
 .recipes-list {
-  /* border: 2px solid green; */
+  /* border: 2px solid blue; */
   font-size: 1.3rem; /* Increase font size */
 }
 
@@ -60,31 +78,36 @@
 }
 
 .recipe-title {
-  /* border: 2px solid green; */
+  /* border: 2px solid blue; */
   font-size: 1.6rem; /* Increase font size */
+  color: #0047ab; /* dark blue */
 }
 
 .recipe-description {
-  /* border: 2px solid green; */
+  /* border: 2px solid blue; */
+  color: #666; /* gray */
   font-size: 1.3rem; /* Increase font size */
 }
 
 .recipe-instructions {
-  /* border: 2px solid green; */
+  /* border: 2px solid red; */
   font-size: 1.3rem; /* Increase font size */
+  color: #555;
 }
 
 .add-recipe-title {
-  /* border: 2px solid green; */
+  /* border: 2px solid greenyellow; */
   font-size: 1.5rem; /* Increase font size */
+  color: #006400; /* dark green */
 }
 
 .add-recipe-form {
-  /* border: 2px solid green; */
+  /* border: 2px solid blue; */
   font-size: 1.3rem; /* Increase font size */
 }
 
 .no-recipes-warning {
-  /* border: 2px solid green; */
-  font-size: 1.2rem; /* Increase font size */
+  /* border: 2px solid purple; */
+  color: red;
+  font-size: 2.2rem; /* Increase font size */
 }
