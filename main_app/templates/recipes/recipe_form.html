@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/recipes/recipe-form.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="form-container">
+  <h1>Add a Recipe for {{ plant.name }}</h1>
+
+  <form method="post" class="form">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn submit">Save Recipe</button>
+  </form>
+
+  <a href="{% url 'plant-detail' plant.id %}" class="btn warn">Cancel</a>
+</section>
+{% endblock %}

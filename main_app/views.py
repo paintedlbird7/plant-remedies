@@ -1,14 +1,12 @@
 # main_app/views.py
+from .models import Plant, Recipe
 from django.shortcuts import render
-from .models import Plant
 from django.views.generic.edit import CreateView
-from .models import Plant
 # Import HttpResponse to send text-based responses
 from django.http import HttpResponse
 # Add UdpateView & DeleteView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from .forms import FeedingForm
-from django.shortcuts import render, redirect
+from .forms import FeedingForm, RecipeForm
 from django.contrib.auth.views import LoginView
 from django.contrib.auth.forms import AuthenticationForm
 from django.views.generic import ListView, DetailView
@@ -18,6 +16,9 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 # Import the mixin for class-based views
 from django.contrib.auth.mixins import LoginRequiredMixin
+
+from .forms import RecipeForm
+from django.shortcuts import render, get_object_or_404, redirect
 
 # Define the home view function
 class Home(LoginView):
@@ -50,10 +51,11 @@ def plant_index(request):
 def plant_detail(request, plant_id):
     plant = Plant.objects.get(id=plant_id)
     # instantiate FeedingForm to be rendered in the template
+    recipes = plant.recipes.all()
     feeding_form = FeedingForm()
     return render(request, 'plants/detail.html', {
         # include the plant and feeding_form in the context
-            'plant': plant, 'feeding_form': feeding_form
+            'plant': plant, 'recipes': recipes, 'feeding_form': feeding_form
         })
 
 LoginRequiredMixin,
@@ -117,8 +119,40 @@ def signup(request):
     #     {'form': form, 'error_message': error_message}
     # )
 
+# views.py
+from django.shortcuts import render, get_object_or_404, redirect
+from .models import Plant, Recipe
+from .forms import RecipeForm
 
 
-# my db I created is called 'plantcollector2'
-#TODO: left at Update the PlantCreate view to assign a new plant to the logged in user
+@login_required
+def add_recipe(request, plant_id):
+    plant = get_object_or_404(Plant, id=plant_id)
+    recipes = plant.recipes.all()
+    feeding_form = FeedingForm()
+
+    # Handling the recipe form submission
+    if request.method == 'POST':
+        form = RecipeForm(request.POST)
+        if form.is_valid():
+            recipe = form.save(commit=False)
+            recipe.plant = plant  # Associate the recipe with the plant
+            recipe.save()  # Save the recipe to the database
+            return redirect('plant-detail', plant_id=plant.id)  # Redirect back to the plant details page
+    else:
+        form = RecipeForm()
+
+    return render(request, 'plants/detail.html', {
+        'plant': plant,
+        'recipes': recipes,
+        'feeding_form': feeding_form,
+        'form': form,  # Add form to the context for rendering
+    })
+
+
+
+
+
 # TODO: add image pertaining to the plant in the EDIT page
+# TODO: make repice render after form submit in the browser
+# TODO: fix why the Manzanillo recipe shows for all of them in the admin
