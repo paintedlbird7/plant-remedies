@@ -109,11 +109,13 @@
 }
 
 .recipe-item {
-  /* border: 2px solid green; */
-  font-size: 1.2rem; 
   /* TODO: can't see this style, create code to render GET list of recipes */
   /* border: 2px solid green; */
-  font-size: 1.2rem; 
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #e6f0ff;
 }
 
 .recipe-title {
@@ -140,7 +142,8 @@
 .add-recipe-title {
   /* border: 2px solid greenyellow; */
   font-size: 1.5rem;
-  color: #006400; 
+  color: #006400;
+  margin-top: 30px;
 }
 
 .add-recipe-form {
