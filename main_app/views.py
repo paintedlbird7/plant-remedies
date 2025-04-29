@@ -51,15 +51,19 @@ def plant_index(request):
 def plant_detail(request, plant_id):
     plant = Plant.objects.get(id=plant_id)
     feeding_form = FeedingForm()
-    recipe_form = RecipeForm()
-    recipes = plant.recipe_set.all()  # or plant.plant_recipes.all() if using related_name
+    form = RecipeForm()
+
+    # This is IMPORTANT
+    recipes = plant.plant_recipes.all()
 
     return render(request, 'plants/detail.html', {
         'plant': plant,
         'feeding_form': feeding_form,
-        'form': recipe_form,
+        'form': form,
         'recipes': recipes,
     })
+
+
 
 class PlantCreate(LoginRequiredMixin, CreateView):
     model = Plant
@@ -134,6 +138,7 @@ def add_recipe(request, plant_id):
     plant.plant_recipes.all()
 
     feeding_form = FeedingForm()
+
     # Handling the recipe form submission
     if request.method == 'POST':
         form = RecipeForm(request.POST)
@@ -152,9 +157,10 @@ def add_recipe(request, plant_id):
         'form': form,  # Add form to the context for rendering
     })
 
-#TODO: save to individual plant. put request(?) assign it to each plant
+
 
 
 
 # TODO: add image pertaining to the plant in the EDIT page
-# TODO: fix merge conflicts https://github.com/paintedlbird7/plant-remedies/pull/5
+# TODO: make repice render after form submit in the browser
+# TODO: fix why the Manzanillo recipe shows for all of them in the admin
