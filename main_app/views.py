@@ -130,7 +130,6 @@ def add_recipe(request, plant_id):
     plant = get_object_or_404(Plant, id=plant_id)
     recipes = plant.recipes.all()
     feeding_form = FeedingForm()
-
     # Handling the recipe form submission
     if request.method == 'POST':
         form = RecipeForm(request.POST)
@@ -149,7 +148,7 @@ def add_recipe(request, plant_id):
         'form': form,  # Add form to the context for rendering
     })
 
-
+#TODO: save to individual plant. put request(?) assign it to each plant
 
 
 

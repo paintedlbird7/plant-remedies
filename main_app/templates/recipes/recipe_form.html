@@ -12,7 +12,7 @@
   <form method="post" class="form">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit" class="btn submit">Save Recipe</button>
+    <button type="submit" class="btn submit">Save/Submit Recipe</button>
   </form>
 
   <a href="{% url 'plant-detail' plant.id %}" class="btn warn">Cancel</a>
