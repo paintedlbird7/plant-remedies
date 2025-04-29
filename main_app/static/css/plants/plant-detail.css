@@ -43,6 +43,22 @@
   margin-bottom: 40px;
 }
 
+/* Plant Image */
+.card-img-container img {
+  width: 150px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Section Containers */
+.feedings, .recipes {
+  background-color: #f0f8ff;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
 /* Feedings Section */
 .add-feeding-title {
   /* border: 2px solid green; */
@@ -58,66 +74,125 @@
   color: black;
   /* border: 2px solid green; */
   font-size: 1.2rem; 
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.feedings-table th, .feedings-table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: center;
+}
+
+.feedings-table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.feedings-table tr:nth-child(even) {
+  background-color: #f9f9f9;
 }
 
 .no-feedings-warning {
   /* border: 2px solid green; */
   color: red;
-  font-size: 15.2rem;
+  font-size: 2.2rem;
 }
 
 /* Recipes Section */
 /* TODO: can't see this style, create code to render GET list of recipes */
 .recipes-list {
-  border: 2px solid blue;
+  /* border: 2px solid blue; */
   font-size: 1.3rem;
+  padding: 10px;
+  list-style-type: none;
 }
 
-/* TODO: can't see this style, create code to render GET list of recipes */
 .recipe-item {
-  border: 2px solid green;
+  /* TODO: can't see this style, create code to render GET list of recipes */
+  /* border: 2px solid green; */
   font-size: 1.2rem;
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #e6f0ff;
 }
 
-/* TODO: can't see this style*/
 .recipe-title {
-  border: 2px solid blue;
+  /* TODO: can't see this style */
+  /* border: 2px solid blue; */
   font-size: 1.6rem;
   color: #0047ab; /* dark blue */
 }
 
-/* TODO: can't see this style, create code to render GET list of recipes */
 .recipe-description {
-  /* border: 2px solid blue; */
+  /* TODO: can't see this style, create code to render GET list of recipes */
+  border: 0.5px solid blue;
   color: #666; /* gray */
-  font-size: 11.3rem;
+  font-size: 1.3rem;
+  margin: 8px 0;
 }
 
-/* TODO: can't see this style, create code to render GET list of recipes */
 .recipe-instructions {
-  border: 2px solid red;
+  /* TODO: can't see this style, create code to render GET list of recipes */
+  /* border: 2px solid red; */
   font-size: 1.3rem;
   color: #555;
 }
 
+/* Add Recipe Section */
 .add-recipe-title {
   /* border: 2px solid greenyellow; */
   font-size: 1.5rem;
   color: #006400;
+  margin-top: 30px;
 }
 
 .add-recipe-form {
   /* border: 2px solid blue; */
   font-size: 1.3rem;
+  margin-bottom: 20px;
 }
 
 .no-recipes-warning {
   /* border: 2px solid purple; */
   color: red;
   font-size: 2.2rem;
+  margin-top: 20px;
 }
 
-/* Space between buttons */
-button {
-  margin: 20px; /* space around all buttons */
+/* Space between buttons and Basic Styling */
+button, .btn {
+  margin: 20px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  text-decoration: none;
+  display: inline-block;
+}
+
+button:hover, .btn:hover {
+  background-color: #45a049;
+}
+
+/* General Typography */
+h2, h3 {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+p, li {
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Page Layout Containers */
+.plant-container, .feedings-toy-container, .recipes-container {
+  margin: 0 auto;
+  max-width: 1000px;
+  padding: 20px;
 }

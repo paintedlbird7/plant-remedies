@@ -120,7 +120,7 @@
     <form method="post" action="{% url 'add-recipe' plant.id %}" class="add-recipe-form">
       {% csrf_token %}
       {{ form.as_p }}
-      {% comment %} <button type="submit" class="btn submit">Save Recipe</button> {% endcomment %}
+      <button type="submit" class="btn submit">Save Recipe</button>
     </form>
 
     <!-- Add Recipe Button -->
