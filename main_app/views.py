@@ -50,16 +50,22 @@ def plant_index(request):
 @login_required
 def plant_detail(request, plant_id):
     plant = Plant.objects.get(id=plant_id)
-    # instantiate FeedingForm to be rendered in the template
-    recipes = plant.recipes.all()
     feeding_form = FeedingForm()
-    return render(request, 'plants/detail.html', {
-        # include the plant and feeding_form in the context
-            'plant': plant, 'recipes': recipes, 'feeding_form': feeding_form
-        })
+    form = RecipeForm()
 
-LoginRequiredMixin,
-class PlantCreate(CreateView):
+    # This is IMPORTANT
+    recipes = plant.plant_recipes.all()
+
+    return render(request, 'plants/detail.html', {
+        'plant': plant,
+        'feeding_form': feeding_form,
+        'form': form,
+        'recipes': recipes,
+    })
+
+
+
+class PlantCreate(LoginRequiredMixin, CreateView):
     model = Plant
     fields = ['name', 'ailment', 'description', 'origin', 'image']
 
@@ -128,7 +134,9 @@ from .forms import RecipeForm
 @login_required
 def add_recipe(request, plant_id):
     plant = get_object_or_404(Plant, id=plant_id)
-    recipes = plant.recipes.all()
+    # recipes = plant.recipes.all()
+    plant.plant_recipes.all()
+
     feeding_form = FeedingForm()
 
     # Handling the recipe form submission

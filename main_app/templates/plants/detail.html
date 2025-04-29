@@ -108,7 +108,7 @@
             <p class="recipe-description">{{ recipe.description }}</p>
             <em class="recipe-instructions">{{ recipe.instructions }}</em>
           </li>
-        {% endfor %}
+            {% endfor %}
       </ul>
     {% else %}
       <p class="no-recipes-warning">No recipes available for this plant yet.</p>
@@ -120,11 +120,13 @@
     <form method="post" action="{% url 'add-recipe' plant.id %}" class="add-recipe-form">
       {% csrf_token %}
       {{ form.as_p }}
-      {% comment %} <button type="submit" class="btn submit">Save Recipe</button> {% endcomment %}
+      <button type="submit" class="btn submit">Save Recipe</button>
     </form>
 
-    <!-- Add Recipe Button -->
-    <a href="{% url 'add-recipe' plant.id %}" class="btn add-recipe">Add a New Recipe</a>
+    
+
+    <!-- Add Recipe Button Remove duplicate-->
+    {% comment %} <a href="{% url 'add-recipe' plant.id %}" class="btn add-recipe">Add a New Recipe</a> {% endcomment %}
   </section>
 </div>
 

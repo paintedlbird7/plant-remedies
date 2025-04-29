@@ -58,7 +58,8 @@ class Recipe(models.Model):
     title = models.CharField(max_length=100)
     ingredients = models.TextField()
     instructions = models.TextField()
-    plant = models.ForeignKey(Plant, on_delete=models.CASCADE)
+    plant = models.ForeignKey(Plant, on_delete=models.CASCADE, related_name='plant_recipes')
+
 
     def __str__(self):
         return f"{self.title} Recipe for {self.plant.name}"
