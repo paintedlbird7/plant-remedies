@@ -16,6 +16,8 @@
   margin: 20px auto;
   box-shadow: 0 4px 8px rgba(0, 0, 255, 0.2);
   background-color: #f9fbff;
+  box-shadow: 0 4px 8px rgba(0, 0, 255, 0.2);
+  background-color: #f9fbff;
   width: 90%;
   max-width: 800px;
   color: #333;
@@ -72,9 +74,6 @@
 .feedings-table {
   color: black;
   /* border: 2px solid green; */
-<<<<<<< HEAD
-  font-size: 1.2rem;
-=======
   font-size: 1.2rem; 
   width: 100%;
   border-collapse: collapse;
@@ -94,7 +93,6 @@
 
 .feedings-table tr:nth-child(even) {
   background-color: #f9f9f9;
->>>>>>> 298c078 (WIP: styling)
 }
 
 .no-feedings-warning {
@@ -108,54 +106,31 @@
 .recipes-list {
   /* border: 2px solid blue; */
   font-size: 1.3rem;
-  padding: 10px;
-  list-style-type: none;
 }
 
 .recipe-item {
-<<<<<<< HEAD
   /* border: 2px solid green; */
   font-size: 1.2rem; 
-=======
   /* TODO: can't see this style, create code to render GET list of recipes */
   /* border: 2px solid green; */
-  font-size: 1.2rem;
-  margin-bottom: 15px;
-  padding: 10px;
-  border-radius: 8px;
-  background-color: #e6f0ff;
->>>>>>> 298c078 (WIP: styling)
+  font-size: 1.2rem; 
 }
 
 .recipe-title {
-<<<<<<< HEAD
-=======
   /* TODO: can't see this style */
->>>>>>> 298c078 (WIP: styling)
   /* border: 2px solid blue; */
   font-size: 1.6rem;
   color: #0047ab;
 }
 
 .recipe-description {
-<<<<<<< HEAD
   /* border: 2px solid blue; */
   color: #666;
   font-size: 1.3rem;
-=======
-  /* TODO: can't see this style, create code to render GET list of recipes */
-  border: 0.5px solid blue;
-  color: #666; /* gray */
-  font-size: 1.3rem;
-  margin: 8px 0;
->>>>>>> 298c078 (WIP: styling)
 }
 
 .recipe-instructions {
-<<<<<<< HEAD
-=======
   /* TODO: can't see this style, create code to render GET list of recipes */
->>>>>>> 298c078 (WIP: styling)
   /* border: 2px solid red; */
   font-size: 1.3rem;
   color: #555;
@@ -165,18 +140,12 @@
 .add-recipe-title {
   /* border: 2px solid greenyellow; */
   font-size: 1.5rem;
-<<<<<<< HEAD
   color: #006400; 
-=======
-  color: #006400;
-  margin-top: 30px;
->>>>>>> 298c078 (WIP: styling)
 }
 
 .add-recipe-form {
   /* border: 2px solid blue; */
   font-size: 1.3rem;
-  margin-bottom: 20px;
 }
 
 .no-recipes-warning {
@@ -185,8 +154,6 @@
   font-size: 2.2rem;
   margin-top: 20px;
 }
-<<<<<<< HEAD
-=======
 
 /* Space between buttons and Basic Styling */
 button, .btn {
@@ -222,4 +189,3 @@ p, li {
   max-width: 1000px;
   padding: 20px;
 }
->>>>>>> 298c078 (WIP: styling)

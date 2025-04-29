@@ -51,15 +51,13 @@ def plant_index(request):
 def plant_detail(request, plant_id):
     plant = Plant.objects.get(id=plant_id)
     feeding_form = FeedingForm()
-    form = RecipeForm()
-
-    # This is IMPORTANT
-    recipes = plant.plant_recipes.all()
+    recipe_form = RecipeForm()
+    recipes = plant.recipe_set.all()  # or plant.plant_recipes.all() if using related_name
 
     return render(request, 'plants/detail.html', {
         'plant': plant,
         'feeding_form': feeding_form,
-        'form': form,
+        'form': recipe_form,
         'recipes': recipes,
     })
 
