@@ -16,31 +16,32 @@
   margin: 20px auto;
   box-shadow: 0 4px 8px rgba(0, 0, 255, 0.2);
   background-color: #f9fbff;
+  box-shadow: 0 4px 8px rgba(0, 0, 255, 0.2);
+  background-color: #f9fbff;
   width: 90%;
   max-width: 800px;
-  color: #333; 
+  color: #333;
 }
 
 /* Plant Info */
 .plant-name {
-  /* border: 2px solid red; */
+  /* border: 2px solid green; */
   font-size: 6.6rem;
 }
 
 .plant-ailment {
-  /* border: 2px solid red; */
+  /* border: 2px solid green; */
   font-size: 1.4rem;
 }
 
 .plant-description {
-  /* border: 2px solid red; */
+  /* border: 2px solid green; */
   font-size: 1.3rem;
 }
 
 .plant-origin {
-  /* border: 2px solid red; */
+  /* border: 2px solid green; */
   font-size: 1.3rem;
-  margin-bottom: 40px;
 }
 
 /* Plant Image */
@@ -67,7 +68,7 @@
 
 .past-feedings-title {
   /* border: 2px solid green; */
-  font-size: 1.4rem; 
+  font-size: 1.4rem;
 }
 
 .feedings-table {
@@ -105,8 +106,6 @@
 .recipes-list {
   /* border: 2px solid blue; */
   font-size: 1.3rem;
-  padding: 10px;
-  list-style-type: none;
 }
 
 .recipe-item {
@@ -123,15 +122,13 @@
   /* TODO: can't see this style */
   /* border: 2px solid blue; */
   font-size: 1.6rem;
-  color: #0047ab; /* dark blue */
+  color: #0047ab;
 }
 
 .recipe-description {
-  /* TODO: can't see this style, create code to render GET list of recipes */
-  border: 0.5px solid blue;
-  color: #666; /* gray */
+  /* border: 2px solid blue; */
+  color: #666;
   font-size: 1.3rem;
-  margin: 8px 0;
 }
 
 .recipe-instructions {
@@ -152,7 +149,6 @@
 .add-recipe-form {
   /* border: 2px solid blue; */
   font-size: 1.3rem;
-  margin-bottom: 20px;
 }
 
 .no-recipes-warning {

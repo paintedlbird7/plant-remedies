@@ -138,6 +138,8 @@ def add_recipe(request, plant_id):
     plant.plant_recipes.all()
 
     feeding_form = FeedingForm()
+
+    feeding_form = FeedingForm()
     # Handling the recipe form submission
     if request.method == 'POST':
         form = RecipeForm(request.POST)
