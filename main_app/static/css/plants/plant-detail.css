@@ -15,48 +15,48 @@
   border-radius: 10px;
   padding: 20px;
   margin: 20px auto;
-  box-shadow: 0 4px 8px rgba(0, 0, 255, 0.2); /* subtle blue shadow */
-  background-color: #f9fbff; /* light blue background */
+  box-shadow: 0 4px 8px rgba(0, 0, 255, 0.2);
+  background-color: #f9fbff;
   width: 90%;
   max-width: 800px;
-  color: #333; /* default text color */
+  color: #333;
 }
 
 /* Plant Info */
 .plant-name {
   /* border: 2px solid green; */
-  font-size: 6.6rem; /* Increase font size */
+  font-size: 6.6rem;
 }
 
 .plant-ailment {
   /* border: 2px solid green; */
-  font-size: 1.4rem; /* Increase font size */
+  font-size: 1.4rem;
 }
 
 .plant-description {
   /* border: 2px solid green; */
-  font-size: 1.3rem; /* Increase font size */
+  font-size: 1.3rem;
 }
 
 .plant-origin {
   /* border: 2px solid green; */
-  font-size: 1.3rem; /* Increase font size */
+  font-size: 1.3rem;
 }
 
 /* Feedings Section */
 .add-feeding-title {
   /* border: 2px solid green; */
-  font-size: 1.5rem; /* Increase font size */
+  font-size: 1.5rem;
 }
 
 .past-feedings-title {
   /* border: 2px solid green; */
-  font-size: 1.4rem; /* Increase font size */
+  font-size: 1.4rem;
 }
 
 .feedings-table {
   /* border: 2px solid green; */
-  font-size: 1.2rem; /* Increase font size */
+  font-size: 1.2rem;
 }
 
 /* TODO: can't see this style */
@@ -69,45 +69,45 @@
 /* Recipes Section */
 .recipes-list {
   /* border: 2px solid blue; */
-  font-size: 1.3rem; /* Increase font size */
+  font-size: 1.3rem;
 }
 
 .recipe-item {
   /* border: 2px solid green; */
-  font-size: 1.2rem; /* Increase font size */
+  font-size: 1.2rem; 
 }
 
 .recipe-title {
   /* border: 2px solid blue; */
-  font-size: 1.6rem; /* Increase font size */
-  color: #0047ab; /* dark blue */
+  font-size: 1.6rem;
+  color: #0047ab;
 }
 
 .recipe-description {
   /* border: 2px solid blue; */
-  color: #666; /* gray */
-  font-size: 1.3rem; /* Increase font size */
+  color: #666;
+  font-size: 1.3rem;
 }
 
 .recipe-instructions {
   /* border: 2px solid red; */
-  font-size: 1.3rem; /* Increase font size */
+  font-size: 1.3rem;
   color: #555;
 }
 
 .add-recipe-title {
   /* border: 2px solid greenyellow; */
-  font-size: 1.5rem; /* Increase font size */
-  color: #006400; /* dark green */
+  font-size: 1.5rem;
+  color: #006400; 
 }
 
 .add-recipe-form {
   /* border: 2px solid blue; */
-  font-size: 1.3rem; /* Increase font size */
+  font-size: 1.3rem;
 }
 
 .no-recipes-warning {
   /* border: 2px solid purple; */
   color: red;
-  font-size: 2.2rem; /* Increase font size */
+  font-size: 2.2rem;
 }

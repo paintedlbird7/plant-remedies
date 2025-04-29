@@ -63,8 +63,6 @@ def plant_detail(request, plant_id):
         'recipes': recipes,
     })
 
-
-
 class PlantCreate(LoginRequiredMixin, CreateView):
     model = Plant
     fields = ['name', 'ailment', 'description', 'origin', 'image']
@@ -162,5 +160,4 @@ def add_recipe(request, plant_id):
 
 
 # TODO: add image pertaining to the plant in the EDIT page
-# TODO: make repice render after form submit in the browser
-# TODO: fix why the Manzanillo recipe shows for all of them in the admin
+# TODO: fix merge conflicts https://github.com/paintedlbird7/plant-remedies/pull/5

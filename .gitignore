@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*.sqlite3
+
+# Virtual environment
+venv/
+env/
+ENV/
+.venv/
+
+# VSCode settings (optional if you use VSCode)
+.vscode/
+
+# Mac system files
+.DS_Store
+
+# Django specific
+db.sqlite3
+*.log
+
+# Media uploads (optional depending on project)
+media/
+
+# Staticfiles collected by collectstatic (optional)
+staticfiles/
+
+# Environment variables / secrets
+.env
