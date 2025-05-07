@@ -102,14 +102,12 @@
 }
 
 /* Recipes Section */
-/* TODO: can't see this style, create code to render GET list of recipes */
 .recipes-list {
   /* border: 2px solid blue; */
   font-size: 1.3rem;
 }
 
 .recipe-item {
-  /* TODO: can't see this style, create code to render GET list of recipes */
   /* border: 2px solid green; */
   font-size: 1.2rem;
   margin-bottom: 15px;
@@ -119,7 +117,6 @@
 }
 
 .recipe-title {
-  /* TODO: can't see this style */
   /* border: 2px solid blue; */
   font-size: 1.6rem;
   color: #0047ab;
@@ -132,7 +129,6 @@
 }
 
 .recipe-instructions {
-  /* TODO: can't see this style, create code to render GET list of recipes */
   /* border: 2px solid red; */
   font-size: 1.3rem;
   color: #555;

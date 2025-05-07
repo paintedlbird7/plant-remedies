@@ -155,13 +155,5 @@ def add_recipe(request, plant_id):
         'plant': plant,
         'recipes': recipes,
         'feeding_form': feeding_form,
-        'form': form,  # Add form to the context for rendering
+        'form': form,
     })
-
-#TODO: save to individual plant. put request(?) assign it to each plant
-
-
-
-# TODO: add image pertaining to the plant in the EDIT page
-# TODO: make repice render after form submit in the browser
-# TODO: fix why the Manzanillo recipe shows for all of them in the admin
