@@ -50,7 +50,7 @@ One place to keep remedies past down to generations.  The idea is to document an
 
 | Resource            | Link |
 |---------------------|------|
-| **Trello Board**     | [View Trello Board](https://https://trello.com/b/Xjzyzbdn/plant-remedies-project-4) |
+| **Trello Board**     | [View Trello Board](https:trello.com/b/Xjzyzbdn/plant-remedies-project-4) |
 <!-- | **Deployed App**     | [View Deployed App](https://trimlinc.netlify.app/) | -->
 
 ---
