@@ -3,7 +3,7 @@ A Plant + Healing Recipes App
 
 
 
-# Plant Remedies – Frontend
+# Plant Remedies
 
 A full-stack web application that allows users to document their home remedies and manage them in a personalized dashboard. Users can create, view, update, and delete plant remedies, as well as leave recipes on individual remedies.
 
