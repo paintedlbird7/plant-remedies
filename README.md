@@ -14,7 +14,7 @@ One place to keep remedies past down to generations.  The idea is to document an
 
 
 <!-- 🔗 TODO: add link to deployed site-->
-🔗 **Check out the Application [Here](https://)**
+🔗 **Check out the Application [Here](https://plant-remedies-be13fae61ece.herokuapp.com/)**
 
 
 ![Alt text](main_app/static/images/LandingPage.png) 
