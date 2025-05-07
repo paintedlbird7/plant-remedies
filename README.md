@@ -7,6 +7,12 @@ A Plant + Healing Recipes App
 
 A full-stack web application that allows users to document their home remedies and manage them in a personalized dashboard. Users can create, view, update, and delete plant remedies, as well as leave recipes on individual remedies.
 
+What problem it solves:
+
+One place to keep remedies past down to generations.  The idea is to document and share traditional knowledge in a modern, organized way.
+
+
+
 <!-- 🔗 TODO: add link to deployed site-->
 🔗 **Check out the Application [Here](https://)**
 

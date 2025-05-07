@@ -3,7 +3,6 @@ from django.db import models
 from django.urls import reverse
 from django.contrib.auth.models import User
 
-# A tuple of 2-tuples added above our models
 MEALS = (
     ('W', 'Water'),
     ('S', 'Sun'),
@@ -22,7 +21,6 @@ class Plant(models.Model):
     image = models.CharField(max_length=100)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
-    # Reverse relationship for recipes
     recipes = models.ManyToManyField('Recipe', related_name='plants', blank=True)
 
     def __str__(self):
@@ -35,23 +33,17 @@ class Plant(models.Model):
         return self.feeding_set.filter(date=date.today()).count() >= len(MEALS)
 
     
-# new Feeding model below Plant model
 class Feeding(models.Model):
-# The first optional positional argument overrides the label
     date = models.DateField('Feeding date')
     meal = models.CharField(
         max_length=1,
-        # add the 'choices' field option
         choices=MEALS,
-        # set the default value for meal to be 'B'
         default=MEALS[0][0]
     )
-       # Create a plant_id column for each feeding in the database
     plant = models.ForeignKey(Plant, on_delete=models.CASCADE)
 
 
     def __str__(self):
-        # Nice method for obtaining the friendly value of a Field.choice
         return f"{self.get_meal_display()} on {self.date}"
 
 class Recipe(models.Model):
